@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediStick AI - لوحة التحكم الذكية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">MediStick 🧠💊</div>
+        <ul class="nav-links">
+            <li class="active"><a href="#">🏠 الرئيسية</a></li>
+            <li><a href="#">📊 تقارير الالتزام</a></li>
+            <li><a href="#">⚙️ إعدادات الوصول</a></li>
+            <li><a href="#">👤 ملف المريض</a></li>
+        </ul>
+    </aside>
+
+    <div class="main-content">
+        <header>
+            <div class="welcome-text">أهلاً بك في نظام المتابعة الشامل</div>
+            <div class="system-status">حالة الاتصال: <span id="status-tag">جاهز ومتصل</span></div>
+        </header>
+
+        <main class="dashboard-grid">
+            
+            <section class="card sim-panel">
+                <h3>🕹️ لوحة اختبار حركة العلبة</h3>
+                <p class="subtitle">اضغطي بالترتيب لتجربة السيناريو:</p>
+                <div class="btn-group">
+                    <button class="btn btn-alert" onclick="triggerDayAlert()">1. تشغيل تنبيه اليوم (إضاءة وصوت)</button>
+                    <button class="btn btn-attach" onclick="attachToPhone()">2. محاكاة تركيب العلبة خلف الجوال 📱</button>
+                </div>
+            </section>
+
+            <section class="card stats-panel">
+                <h3>📊 الالتزام بالذكاء الاصطناعي</h3>
+                <div class="progress-container">
+                    <div class="progress-circle" id="progress-bar">
+                        <span id="progress-text">0%</span>
+                    </div>
+                    <p id="ai-insight">اضغط على أزرار المحاكاة للبدء في تتبع دقة الجرعات ونمط المريض اليومي.</p>
+                </div>
+            </section>
+
+            <section class="card organizer-panel">
+                <h3>📅 مجسم المنظم الأسبوعي (7 علب منفصلة)</h3>
+                <div class="weekly-list">
+                    
+                    <div class="day-row" id="monday-box">
+                        <div class="day-info">
+                            <span class="day-name">الإثنين (Mon)</span>
+                            <span class="braille-tag" title="برايل للمكفوفين">⠇⠕⠝</span>
+                        </div>
+                        <div class="slots">
+                            <div class="slot-btn" id="morn-slot" onclick="takeMedication('صباحاً')">MORN <small>⠍⠕⠗⠝</small></div>
+                            <div class="slot-btn" id="noon-slot">NOON <small>⠝⠕⠕⠝</small></div>
+                            <div class="slot-btn" id="eve-slot">EVE <small>⠑⠪⠑</small></div>
+                            <div class="slot-btn" id="bed-slot">BED <small>⠥⠑⠙</small></div>
+                        </div>
+                    </div>
+
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">الثلاثاء</span></div></div>
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">الأربعاء</span></div></div>
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">الخميس</span></div></div>
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">الجمعة</span></div></div>
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">السبت</span></div></div>
+                    <div class="day-row disabled"><div class="day-info"><span class="day-name">الأحد</span></div></div>
+
+                </div>
+            </section>
+
+            <section class="card notify-panel">
+                <h3>🔔 مركز الإشعارات الفورية (دعم الصم)</h3>
+                <div class="notification-box" id="notify-screen">
+                    النظام في وضع الاستعداد الآن... في انتظار التنبيه القادم.
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
